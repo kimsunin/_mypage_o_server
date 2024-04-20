@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import rootRouter from "./src/Routers/rootRouter.js";
+import userRouter from "./src/Routers/userRouter.js";
 import morgan from "morgan";
 import cors from "cors";
 
@@ -19,6 +20,7 @@ app.use(
 );
 
 app.use("/", rootRouter);
+app.use("/user", userRouter);
 
 app.listen(port, () => {
   console.log(`mypage-server:http://localhost:${port}✅`);
